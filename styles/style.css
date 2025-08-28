@@ -39,6 +39,10 @@ nav li {
     list-style: none;
 }
 
+a {
+    color: var(--light-tan)
+}
+
 a:visited {
     color: var(--bright-red)
 }
