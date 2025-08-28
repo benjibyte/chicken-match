@@ -1,0 +1,56 @@
+/*Free Google Pixel Font*/
+.jersey-10-regular {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    font-family: "Jersey 10";
+
+    --dark-red: #4b2241;
+    --bright-red: #af3626;
+    --dark-tan: #7d4a31;
+    --light-tan: #dfba77;
+}
+
+
+nav {
+    padding: 0.25em;
+   
+    display:flex;
+    flex-direction: row;
+    background-color: var(--dark-red);
+    color: var(--light-tan);
+
+    font-size:xx-large;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+}
+
+nav li {
+    list-style: none;
+}
+
+a:visited {
+    color: var(--bright-red)
+}
+
+
+
+
+main {
+    background-color: var(--bright-red);
+    height: 100vh;
+    width: auto;
+}
+
+
+
