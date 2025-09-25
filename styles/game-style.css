@@ -58,8 +58,17 @@ main {
     background-color: var(--bright-red);
     height: 100vh;
     width: auto;
+
+    
 }
 
 
 
 
+
+/* Actual game style */
+
+canvas {
+    
+    image-rendering: pixelated;
+}
