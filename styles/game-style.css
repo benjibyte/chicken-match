@@ -63,12 +63,11 @@ main {
 }
 
 
-
-
-
-/* Actual game style */
-
-canvas {
-    
+main img {
     image-rendering: pixelated;
+
+    width: 25%;
+    
 }
+
+
