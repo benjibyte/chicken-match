@@ -2,8 +2,12 @@ extends Node
 
 
 var found_eggs := 0 # max 3
-var egg_types = [] # add the colored types, so we can compare to see if all the eggs are similar
+var brown_eggs := 0 # add the colored types, so we can compare to see if all the eggs are similar
+var white_eggs := 0
+var blue_eggs := 0
+
 var max_chickens_selected := 3
+var chickens_selected := 0
 var chicken_states = [
 	"idle", # Just existing. Hasn't been tapped/clicked yet.
 	"hidden", # a match has occured. Once state has been recieved, butcher the chicken.
