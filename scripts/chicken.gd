@@ -6,23 +6,28 @@ signal chicken_chosen
 
 var colors = ["white", "brown", "blue"]
 var egg_color := "not chosen yet"
+var eggs = preload("res://egg.tscn")
 var local_state = game.chicken_states[0] # 0 = "idle", 1 = "waiting" 3 = "dead"
 
 func spawn_egg(color):
-	var new_egg = 
+	var new_egg = eggs.instantiate()
+	add_child(new_egg)
+
+
 	print("Made an " + color + " egg!")
 	
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Set the Initial Chicken State
-	local_state = "idle"\
+	local_state = "idle"
 	
 	# Prepare Eggs
 	# Decide what color of egg to lay.
 	var color_index = randi_range(0,2)
 	egg_color = colors[color_index]
-	var eggs = preload("res://egg.tscn")
+	
 
 	# make sure we don't have more than 3 of the same egg.
 	if egg_color == "brown" and game.brown_eggs < 3:
