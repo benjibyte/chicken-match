@@ -1,3 +1,15 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1766103060
+::res://::1766255713
+background.tscn::PackedScene::1656369075452686166::1766110985::0::1::::<><><>0<>0<><>::uid://bwte081771p5f::::res://assets/img/background.png
+chicken.tscn::PackedScene::3274045613616004020::1766253145::0::1::::<><><>0<>0<><>::
+egg.tscn::PackedScene::2069830903838291642::1766112114::0::1::::<><><>0<>0<><>::uid://cax8mlwo177ww::::res://assets/img/egg.png
+game.tscn::PackedScene::8171277722513336750::1766111849::0::1::::<><><>0<>0<><>::uid://xumfld6kw3la::::res://background.tscn<>uid://bmv8b2fwqp47i::::res://chicken.tscn
 icon.svg::CompressedTexture2D::52524231284892668::1766103056::1766103061::1::::<><><>0<>0<>34791567509efb02765f190739667512<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1766103827::0::1::::<><><>0<>0<><>::
+chicken.gd::GDScript::6622210994093464648::1766255713::0::1::::<>Area2D<><>0<>0<><>::
+::res://assets/::1766107186
+::res://assets/img/::1766253836
+background.png::CompressedTexture2D::3970087708808843661::1766107283::1766107239::1::::<><><>0<>0<>9b7b063e48e72b53266be3b4cb20b934<>res://.godot/imported/background.png-ea92b95dccc3c7990b1d189785e38db1.ctex::
+chicken_spritesheet.png::CompressedTexture2D::2198649352881464071::1766253818::1766253836::1::::<><><>0<>0<>9ad5edff789d96bee1ade318050748dd<>res://.godot/imported/chicken_spritesheet.png-22387d54bb4817588b097dc5570178d9.ctex::
+egg.png::CompressedTexture2D::4822347758432413922::1766108136::1766108141::1::::<><><>0<>0<>f158ebe26dc85be3819c36bb248f51bb<>res://.godot/imported/egg.png-94fe3789f48ca982716f72426ea800bf.ctex::
+::res://scripts/::1766107182

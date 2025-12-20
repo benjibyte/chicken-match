@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dooh0rj4wnwmw"]
+
+[ext_resource type="PackedScene" uid="uid://xumfld6kw3la" path="res://background.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bmv8b2fwqp47i" path="res://chicken.tscn" id="2_feb5d"]
+
+[node name="screen" type="Node2D"]
+
+[node name="background" parent="." instance=ExtResource("1_e2o6t")]
+
+[node name="chicken1" parent="background" instance=ExtResource("2_feb5d")]
+position = Vector2(-17, 21)
+
+[node name="chicken2" parent="background" instance=ExtResource("2_feb5d")]
+position = Vector2(15, 21)
+
+[node name="chicken3" parent="background" instance=ExtResource("2_feb5d")]
+position = Vector2(-1, 21)
+
+[node name="chicken4" parent="background" instance=ExtResource("2_feb5d")]
+position = Vector2(15, -11)
+
+[node name="chicken5" parent="background" instance=ExtResource("2_feb5d")]
+position = Vector2(-1, -11)
+
+[node name="chicken6" parent="background" instance=ExtResource("2_feb5d")]
+position = Vector2(15, 5)
+
+[node name="chicken7" parent="background" instance=ExtResource("2_feb5d")]
+position = Vector2(-1, 5)
+
+[node name="chicken8" parent="background" instance=ExtResource("2_feb5d")]
+position = Vector2(-17, 5)
+
+[node name="chicken9" parent="background" instance=ExtResource("2_feb5d")]
+position = Vector2(-17, -11)

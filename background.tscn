@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://xumfld6kw3la"]
+
+[ext_resource type="Texture2D" uid="uid://bwte081771p5f" path="res://assets/img/background.png" id="1_oabld"]
+
+[node name="background" type="Node"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_oabld")
+
+[node name="Camera2D" type="Camera2D" parent="."]
