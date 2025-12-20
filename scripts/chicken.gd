@@ -43,15 +43,17 @@ func _process(_delta: float) -> void:
 	# Listen for the No Match signal. (switch back to idle)
 
 func _input_event(_viewport: Viewport, _event: InputEvent, _shape_idx: int) -> void:
-	if game.chickens_selected < 3:
-		emit_signal("chicken_chosen")
-		# change local_state to be read by game.gd
-		local_state = "waiting"
-		game.chickens_selected += 1
-		# spawn egg scene
-		spawn_egg(egg_color)
-		# play the poof animation
-		_animated_sprite.play("poof")
-	else: 
-		print("Maximum chickens selected!\ngame.gd should be comparing eggs now...")
-		
+	# Only Click and Touch events are valid
+	if (_event is InputEventMouseButton and _event.pressed) and (_event.button_index == MOUSE_BUTTON_LEFT):
+		if game.chickens_selected < 3:
+			emit_signal("chicken_chosen")
+			# change local_state to be read by game.gd
+			local_state = "waiting"
+			game.chickens_selected += 1
+			# spawn egg scene
+			spawn_egg(egg_color)
+			# play the poof animation
+			_animated_sprite.play("poof")
+		else: 
+			print("Chicken is hidden...")
+			
