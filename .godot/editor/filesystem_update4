@@ -1,3 +1,5 @@
 res://chicken.tscn
 res://scripts/chicken.gd
 res://egg.tscn
+res://game.gd
+res://game.tscn
