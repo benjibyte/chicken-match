@@ -23,5 +23,12 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	
+	# once there are 3 eggs
+	if found_eggs == 3:
+		print("3 eggs have been laid!")
+		
+		
+
+

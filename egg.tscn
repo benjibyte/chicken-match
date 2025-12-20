@@ -1,10 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://4qv2vlwdb8ws"]
+[gd_scene load_steps=8 format=3 uid="uid://4qv2vlwdb8ws"]
 
-[ext_resource type="Texture2D" uid="uid://cax8mlwo177ww" path="res://assets/img/egg.png" id="1_6upkn"]
 [ext_resource type="Script" uid="uid://6drwhws5pun0" path="res://scripts/egg.gd" id="1_60cwx"]
+[ext_resource type="Texture2D" uid="uid://da1ujuknsnin2" path="res://assets/img/egg_spritesheet.png" id="2_60cwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45cuv"]
 size = Vector2(12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s80rl"]
+atlas = ExtResource("2_60cwx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7piv4"]
+atlas = ExtResource("2_60cwx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtrp8"]
+atlas = ExtResource("2_60cwx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lxc0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s80rl")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7piv4")
+}],
+"loop": true,
+"name": &"brown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtrp8")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}]
 
 [node name="egg" type="Area2D"]
 script = ExtResource("1_60cwx")
@@ -12,5 +51,6 @@ script = ExtResource("1_60cwx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_45cuv")
 
-[node name="sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_6upkn")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4lxc0")
+animation = &"blue"
