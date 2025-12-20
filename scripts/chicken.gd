@@ -10,8 +10,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	# tap or click on the chicken triggers POOF
-	# POOF: means to spawn an egg and play the poof animation.
-	
+	pass
+
+func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
+	print("click!")
+	# spawn egg scene
+	# play the poof animation
+	# set the global "state" variable to "waiting."
 	
