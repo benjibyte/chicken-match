@@ -29,6 +29,8 @@ func _process(_delta: float) -> void:
 	if found_eggs == 3:
 		print("3 eggs have been laid!")
 		
+		print("brown eggs: " + str(brown_eggs))
+		print("white eggs: " + str(white_eggs))
+		print("blue eggs: " + str(blue_eggs))
+
 		
-
-

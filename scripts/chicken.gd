@@ -24,25 +24,11 @@ func _ready() -> void:
 	local_state = "idle"
 	
 	# Prepare Eggs
-	# Decide what color of egg to lay.
+	# Decide what color of egg to lay. unless the color is maxed out then choose something else
 	var color_index = randi_range(0,2)
 	egg_color = colors[color_index]
 	
 
-	# make sure we don't have more than 3 of the same egg.
-	if egg_color == "brown" and game.brown_eggs < 3:
-		game.brown_eggs += 1
-
-	elif egg_color == "blue" and game.blue_eggs < 3:
-		game.blue_eggs += 1
-
-	elif egg_color == "white" and game.white_eggs < 3:
-		game.white_eggs += 1
-	
-	else: 
-		print("Brown Eggs: " + str(game.brown_eggs))
-		print("Blue Eggs: " + str(game.blue_eggs))
-		print("White Eggs: " + str(game.white_eggs))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -59,7 +45,7 @@ func _input_event(_viewport: Viewport, _event: InputEvent, _shape_idx: int) -> v
 			# change local_state to be read by game.gd
 			local_state = "waiting"
 			game.chickens_selected += 1
-			# spawn egg scene
+			# spawn egg scene if 
 			spawn_egg(egg_color)
 			# play the poof animation
 			_animated_sprite.play("poof")

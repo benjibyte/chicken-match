@@ -16,16 +16,20 @@ func _ready() -> void:
 	if egg_color == "white":
 		# Attach the white sprite frame
 		_egg_sprites.play("white")
+		game.white_eggs += 1
 	elif egg_color == "brown":
 		# Attach the brown sprite frame
 		_egg_sprites.play("brown")
+		game.brown_eggs += 1
 	elif egg_color == "blue":
 		# Attach the blue sprite frame
 		_egg_sprites.play("blue")
+		game.blue_eggs += 1
 	else:
 		print("Couldn't find a color!")
 	
 	game.found_eggs += 1
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
