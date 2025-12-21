@@ -9,6 +9,21 @@ var egg_color := "not chosen yet"
 var eggs = preload("res://egg.tscn")
 var local_state = game.chicken_states[0] # 0 = "idle", 1 = "waiting" 3 = "dead"
 
+
+func get_egg_color(): # Get the color of a chicken and 
+					  # remove the color picking options if a match was already found of that color
+	if game.blue_eggs > 2:
+		colors.remove_at(2)
+	if game.brown_eggs > 2:
+		colors.remove_at(1)
+	if game.white_eggs > 2:
+		colors.remove_at(0)
+
+	var max_color_range = colors.size() - 1
+
+	var color_index = randi_range(0, max_color_range)
+	egg_color = colors[color_index]
+
 func spawn_egg(color):
 	var new_egg = eggs.instantiate()
 	add_child(new_egg)
@@ -16,8 +31,6 @@ func spawn_egg(color):
 
 	print("Made an " + color + " egg!")
 	
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Set the Initial Chicken State
@@ -25,8 +38,7 @@ func _ready() -> void:
 	
 	# Prepare Eggs
 	# Decide what color of egg to lay. unless the color is maxed out then choose something else
-	var color_index = randi_range(0,2)
-	egg_color = colors[color_index]
+	
 	
 
 

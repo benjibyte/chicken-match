@@ -16,6 +16,7 @@ var chicken_states = [
 
 # func read_chicken_states():
 
+#signal butcher
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,9 +29,19 @@ func _process(_delta: float) -> void:
 	# once there are 3 eggs
 	if found_eggs == 3:
 		print("3 eggs have been laid!")
-		
 		print("brown eggs: " + str(brown_eggs))
 		print("white eggs: " + str(white_eggs))
 		print("blue eggs: " + str(blue_eggs))
 
+		# Detect any matches
+		if brown_eggs >= 3:
+			print("Brown Egg match found!")
+					 
+		elif white_eggs >= 3:
+			print("White Egg match found!")
 		
+		elif blue_eggs >= 3:
+			print("Blue Egg match found!")	
+			
+		else: # No match was found
+			print("No match has been found.")
