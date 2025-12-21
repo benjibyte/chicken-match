@@ -12,17 +12,19 @@ var local_state = game.chicken_states[0] # 0 = "idle", 1 = "waiting" 3 = "dead"
 
 func get_egg_color(): # Get the color of a chicken and 
 					  # remove the color picking options if a match was already found of that color
-	if game.blue_eggs > 2:
-		colors.remove_at(2)
-	if game.brown_eggs > 2:
-		colors.remove_at(1)
-	if game.white_eggs > 2:
-		colors.remove_at(0)
+	
 
-	var max_color_range = colors.size() - 1
-
-	var color_index = randi_range(0, max_color_range)
+	var color_index = randi_range(0, 2)
 	egg_color = colors[color_index]
+
+	if egg_color == "white" and game.white_eggs >= 3:
+		egg_color = get_egg_color()
+	elif egg_color == "brown" and game.brown_eggs >= 3:
+		egg_color = get_egg_color()
+	elif egg_color == "blue" and game.blue_eggs >= 3:
+		egg_color = get_egg_color()
+	else:
+		return egg_color
 
 func spawn_egg(color):
 	var new_egg = eggs.instantiate()
@@ -58,6 +60,7 @@ func _input_event(_viewport: Viewport, _event: InputEvent, _shape_idx: int) -> v
 			local_state = "waiting"
 			game.chickens_selected += 1
 			# spawn egg scene if 
+			egg_color = get_egg_color()
 			spawn_egg(egg_color)
 			# play the poof animation
 			_animated_sprite.play("poof")
