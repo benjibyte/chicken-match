@@ -2,3 +2,5 @@ res://scripts/egg.gd
 res://game.tscn
 res://game.gd
 res://timer_show_matches.gd
+res://scripts/chicken.gd
+res://egg.tscn
