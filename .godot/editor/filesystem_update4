@@ -5,3 +5,4 @@ res://background.tscn
 res://scripts/background.gd
 res://game.tscn
 res://scripts/timer_show_matches.gd
+res://egg.tscn

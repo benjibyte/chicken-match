@@ -34,7 +34,9 @@ func _no_match_found():
 	add_child(time)
 	time.wait_time = 1.0
 	time.start()
-	queue_free()
+	
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,6 +49,7 @@ func _ready() -> void:
 	game.brown_match_found.connect(_brown_match_found)
 	game.blue_match_found.connect(_blue_match_found)
 	game.no_match_found.connect(_no_match_found)
+
 
 	# Set sprite based on color
 	if egg_color == "white":
@@ -73,3 +76,8 @@ func _process(_delta: float) -> void:
 	# when 3 eggs are up, then emit the match signal if all eggs are the same color
 
 	
+
+# Only get rid of the eggs when the player has seen a chance
+# to see who they are.
+func _on_timer_timeout() -> void:
+	queue_free()
