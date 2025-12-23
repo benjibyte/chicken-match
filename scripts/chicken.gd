@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
-signal chicken_chosen
+
 
 var colors = ["white", "brown", "blue"]
 var egg_color := "not chosen yet"
@@ -12,8 +12,6 @@ var local_state = game.chicken_states[0] # 0 = "idle", 1 = "waiting" 3 = "dead"
 
 func get_egg_color(): # Get the color of a chicken and 
 					  # remove the color picking options if a match was already found of that color
-	
-
 	var color_index = randi_range(0, 2)
 	egg_color = colors[color_index]
 
@@ -33,15 +31,31 @@ func spawn_egg(color):
 
 	print("Made an " + color + " egg!")
 	
+
+
+
+func _no_match_found():
+	_animated_sprite.stop()
+	local_state = "idle"
+	var time = Timer.new()
+	add_child(time)
+	time.wait_time = 1.0
+	time.start()
+	_animated_sprite.play("idle")
+	time.stop()
+
+	
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Set the Initial Chicken State
 	local_state = "idle"
 	
-	# Prepare Eggs
+	# connect to the signals from game.gd
+	game.no_match_found.connect(_no_match_found)
+
 	# Decide what color of egg to lay. unless the color is maxed out then choose something else
-	
-	
+	egg_color = get_egg_color()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -60,10 +74,9 @@ func _input_event(_viewport: Viewport, _event: InputEvent, _shape_idx: int) -> v
 			local_state = "waiting"
 			game.chickens_selected += 1
 			# spawn egg scene if 
-			egg_color = get_egg_color()
+			
 			spawn_egg(egg_color)
 			# play the poof animation
 			_animated_sprite.play("poof")
 		else: 
 			print("Chicken is hidden...")
-			

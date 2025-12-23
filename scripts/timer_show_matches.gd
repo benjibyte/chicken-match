@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Listen if 3 chickens were flipped over then wait a little bit with a TIMER,
 	# Then once timer is up, tell parent to change their chicken state and sprite to visible and idle,
 	# then the egg terminates.

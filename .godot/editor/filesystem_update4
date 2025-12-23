@@ -1,6 +1,7 @@
-res://scripts/egg.gd
-res://game.tscn
-res://game.gd
-res://timer_show_matches.gd
 res://scripts/chicken.gd
-res://egg.tscn
+res://game.gd
+res://scripts/egg.gd
+res://background.tscn
+res://scripts/background.gd
+res://game.tscn
+res://scripts/timer_show_matches.gd
